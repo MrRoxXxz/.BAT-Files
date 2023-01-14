@@ -1,7 +1,10 @@
-@echo off
+@@echo off
+
+rem Get the user's input for the COM port
+set /p com_port=Enter the COM port: 
 
 rem Connect to the switch using serial connection
-mode com1:115200,n,8,1
+mode %com_port%:115200,n,8,1
 
 rem Wait for the serial connection to be established
 timeout /t 5
@@ -18,7 +21,7 @@ echo exit >> cisco.txt
 echo exit >> cisco.txt
 
 rem Run the commands from the cisco.txt file
-type cisco.txt > com1
+type cisco.txt > %com_port%
 
 rem Wait for the serial connection to close
 timeout /t 5
