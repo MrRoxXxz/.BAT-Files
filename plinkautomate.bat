@@ -1,3 +1,3 @@
 @echo off
-plink.exe -serial COM1 -sercfg 115200,8,n,1,N -m commands.txt > output.txt
+plink.exe -serial COM1 -sercfg 9600,8,n,1,N < commands.txt > output.txt
 pause
